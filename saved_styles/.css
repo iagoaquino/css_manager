@@ -1,0 +1,109 @@
+:root {
+  --primary-color: #2f436e;
+  --secondary-color: #fff;
+  --third-color: #000;
+  --primary-font-color: #ffffffd4;
+  --secondary-font-color: #2f436e;
+  --title-weight: 900;
+  --title-size: x-large;
+  --title-font-family: Roboto, Open Sans, Lato, Helvetica, Arial, Inter, Poppins;
+  --main-text-weight: 600;
+  --font-size: medium;
+  --normal-text-font-family: x-Courier New, Fira Code, Source Code Pro, Monaco;
+}
+body {
+  margin: 0;
+}
+.primary-background {
+  background: var(--primary-color) !important;
+  color: var(--primary-font-color);
+}
+.secondary-background {
+  background-color: var(--secondary-color) !important;
+  color: var(--secondary-font-color);
+}
+.third-background {
+  background-color: var(--third-color) !important;
+  color: var(--primary-font-color);
+}
+.primary-font-color {
+  color: var(--primary-font-color) !important;
+}
+.secondary-font-color {
+  color: var(--secondary-font-color) !important;
+}
+.normal-text {
+  font-weight: var(--main-text-weight);
+  font-size: var(--font-size);
+  font-family: var(--normal-text-font-family);
+}
+.title {
+  text-align: center;
+  font-weight: var(--title-weight);
+  font-size: var(--title-size);
+  font-family: var(--title-font-family);
+}
+.justify-align {
+  text-align: justify;
+}
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right;
+}
+.center-align {
+  text-align: center;
+}
+.rounded {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.contact-icon {
+  width: 80%;
+  height: auto;
+}
+.clicable {
+  cursor: pointer;
+} /*Antd configuration*/
+header {
+  background-color: var(--primary-color) !important;
+}
+footer {
+  background-color: var(--third-color) !important;
+}
+.ant-menu-light .ant-menu-item {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-font-color) !important;
+}
+.ant-steps .ant-steps-item-title {
+  background-color: var(--secondary-color) !important;
+  color: var(--secondary-font-color) !important;
+}
+.ant-steps .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+  background: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+.ant-steps.ant-steps-navigation .ant-steps-item::before {
+  background-color: var(--primary-color) !important;
+}
+.ant-steps .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+  background: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+.ant-menu-item-selected::after {
+  border-bottom-color: var(--primary-font-color) !important;
+}
+.ant-menu-light.ant-menu-horizontal > .ant-menu-item:hover::after {
+  border-bottom-color: var(--primary-font-color) !important;
+}
+.primary-arrow .slick-prev,
+.primary-arrow .slick-next::after {
+  color: var(--primary-font-color);
+}
+.secondary-arrow .slick-prev,
+.secondary-arrow .slick-next::after {
+  color: var(--secondary-font-color);
+}
