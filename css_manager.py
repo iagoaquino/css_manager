@@ -55,12 +55,18 @@ def save_new_css():
     create_new_style(main_configuration+get_complementary_text(), request_response['name'])
     return ""
 
+@app.get("/get_files_in_folder")
+def get_all_files_name():
+    files = glob("saved_styles/*css")
+    return files
+
+
 @app.get("/get_saved_files")
 def get_all_files_saved():
     files = glob("saved_styles/*css")
     files_name_list = []
     for file in files:
-        files_name_list.append(file.split("\\")[1].split('.')[0])
+        files_name_list.append(file.split("/")[1].split('.')[0])
     return files_name_list
 
 @app.delete("/delete/<name>")
