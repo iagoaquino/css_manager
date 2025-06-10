@@ -66,7 +66,7 @@ def get_all_files_saved():
     files = glob("saved_styles/*css")
     files_name_list = []
     for file in files:
-        files_name_list.append(file.split("\\")[1].split('.')[0])
+        files_name_list.append(file.split("/")[1].split('.')[0])
     return files_name_list
 
 @app.delete("/delete/<name>")
