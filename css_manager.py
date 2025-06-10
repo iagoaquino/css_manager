@@ -3,19 +3,18 @@ from flask import Flask, request, send_from_directory
 from flask_cors import CORS
 from glob import glob
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
+port = os.getenv("PORT")
 #Functions
 def get_complementary_text():
     with open('applied_css/current_applied_style.css', 'r') as file:
         whole_text = file.read().replace("\n", "")
 
-    end_flag = True
-    position = 0
-
-    while end_flag:
-        if whole_text[position] == "}":
-            end_flag = False
-        position+=1
+    
+    position = whole_text.find("}")
 
     complementary_text = whole_text[position:]
     return complementary_text
@@ -23,8 +22,6 @@ def get_complementary_text():
 def save_css(css_text, path):
     with open(path, 'w') as file:
         file.write(css_text)
-
-
 
 
 
@@ -77,3 +74,6 @@ def delete_file(name=None):
 @app.get("/get_selected_css/<folder>/<selected_css_name>")
 def get_current_applied_style(folder=None, selected_css_name=None):
     return send_from_directory(folder, f'{selected_css_name}.css', mimetype='text/css')
+
+
+app.run(host="0.0.0.0",port=port)
